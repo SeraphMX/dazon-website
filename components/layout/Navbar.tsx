@@ -10,6 +10,7 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
+  Image,
   Link,
   NavbarBrand,
   NavbarContent,
@@ -21,7 +22,6 @@ import {
 } from '@nextui-org/react'
 import { FileText, Heart, Moon, Settings, ShoppingCart, Store, Sun, User } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -71,7 +71,10 @@ export function Navbar() {
 
       <NavbarContent className='hidden sm:flex gap-4' justify='start'>
         <NavbarBrand>
-          <Image src='/images/logo-header.jpg' alt='' width={50} height={80} />{' '}
+          <Link href='/'>
+            <Image removeWrapper src='/images/logo-header.jpg' alt='' className='w-8 rounded-none ' />
+          </Link>
+
           <span className='text-xl font-semibold pl-2'>Dazon México</span>
         </NavbarBrand>
       </NavbarContent>
